@@ -1,0 +1,30 @@
+select * from nomnom;
+
+select distinct neighborhood from nomnom;
+
+select distinct cuisine from nomnom;
+
+select * from nomnom where cuisine is 'Chinese';
+
+select * from nomnom where review >= 4;
+
+select * from nomnom where cuisine is 'Italian' and price = '$$$';
+
+select * from nomnom where name like '%meatball%';
+
+select * from nomnom where neighborhood is 'Midtown' or neighborhood is 'Downtown' or neighborhood is 'Chinatown';
+
+select * from nomnom where health is null;
+
+select * from nomnom order by review desc limit 10;
+
+select name,
+  case
+    when review > 4.5 then 'Exraordinary'
+    when review > 4 then 'Excellent'
+    when review > 3 then 'Good'
+    when review > 2 then 'Fair'
+    else 'Poor'
+  end as 'Review'
+from nomnom;
+
